@@ -1,0 +1,29 @@
+ public static void main(String[] args) {
+        // TODO code application logic here
+        isVesuvian(65);
+        isVesuvian(50);
+    }
+    static int isVesuvian(int n)
+    {
+        int flag=0,sqrt1=0,sqrt2=0,count=0;
+        for(int i=1;i<n-1;i++)
+        {
+            sqrt1=i*i;
+            for(int j=1;j<n-1;j++)
+            {
+               sqrt2=j*j;
+            if(sqrt1+sqrt2==n)
+            {
+                count++;
+                break;
+            }
+            if(count==2)
+            {
+                flag=1;
+                break;
+            }
+            }
+        }
+        System.out.println(flag);
+        return flag;
+    }

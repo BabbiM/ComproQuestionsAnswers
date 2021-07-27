@@ -1,0 +1,47 @@
+public static void main(String[] args) {
+        isSequentiallyBounded(new int[]{2, 3, 3, 99, 99, 99, 99, 99});
+        isSequentiallyBounded(new int[]{0, 1});
+        isSequentiallyBounded(new int[]{-1, 2});
+        isSequentiallyBounded(new int[]{});
+        isSequentiallyBounded(new int[]{5, 5, 5, 5});
+        isSequentiallyBounded(new int[]{5, 5, 5, 2, 5} );
+    }
+    static int isSequentiallyBounded(int a[])
+    {
+        int flag=0,checkOrder=1,count=0,checkNeg=1;
+        if(a.length==0)
+            flag=1;
+        for(int i=0;i<a.length-1;i++)
+        {
+            if(a[i]>a[i+1])
+            {
+                checkOrder=0;
+                break;
+            }
+        }
+        for(int i=0;i<a.length;i++)
+        {
+            if(a[i]<0)
+            {
+                checkNeg=0;
+            }
+        }
+        if(checkOrder==1 && checkNeg==1)
+        {
+            for(int i=0;i<a.length;i++)
+            {
+              for(int j=0;j<a.length;j++)
+                {
+                    if(a[i]==a[j])
+                    {
+                        count++;
+                    }
+                }
+              if(count<a[i])
+                {
+                    flag=1;
+                }
+            }
+        }
+        return flag;
+    }

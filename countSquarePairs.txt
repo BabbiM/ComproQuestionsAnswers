@@ -1,0 +1,25 @@
+public static void main(String[] args) {
+        countSquarePairs(new int[]{11, 5, 4, 20});
+        countSquarePairs(new int[]{9, 0, 2, -5, 7});
+        countSquarePairs(new int[] {9});
+    }
+    static int countSquarePairs(int []a)
+    {
+        int isSquare=0, isSquareArgument=0,squareCounter=0;
+        for(int i=0;i<a.length;i++)
+        {
+            for(int j=0;j<a.length;j++)
+            {
+                if(a[i]<a[j])
+                {
+                    isSquareArgument=a[i]+a[j];
+                    isSquare=isPerfectSquare(isSquareArgument);
+                    if(isSquare==1)
+                    {
+                        squareCounter=squareCounter+1;
+                    }   
+                }
+            }
+          } 
+        return squareCounter;
+    }

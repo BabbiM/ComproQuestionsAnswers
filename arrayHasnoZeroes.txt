@@ -1,0 +1,25 @@
+public static void main(String[] args) {
+        // TODO code application logic here
+        arrayHasNoZeroes(new int []{3, 2, 1});
+        arrayHasNoZeroes(new int []{1, 0, 4,0});
+        arrayHasNoZeroes(new int []{1, 2, 3,0});
+        arrayHasNoZeroes(new int []{0, 0, 0,0});
+        arrayHasNoZeroes(new int []{});
+    }
+    static int arrayHasNoZeroes(int []a)
+    {
+        int flag=0,count=0;;
+        for(int i=0;i<a.length;i++)
+        {
+            if(a[i]!=0)
+            {
+                count++;
+            }
+        }
+        if(count==a.length)
+        {
+            flag=1;
+        }    
+        System.out.println(flag);
+        return flag;
+    }

@@ -1,0 +1,43 @@
+public static void main(String[] args) {
+        isAllPossibilities(new int[]{1, 2, 0, 3});
+        isAllPossibilities(new int[]{3, 2, 1, 0});
+        isAllPossibilities(new int[]{1, 2, 4, 3});
+        isAllPossibilities(new int[]{0, 2, 3});
+        isAllPossibilities(new int[]{0});
+        isAllPossibilities(new int[]{});
+    }
+    static int isAllPossibilities(int a[])
+    {
+        int flag=0,count=0,checkArray=1;
+     if(a.length>0)//Checking the array whether it is non empty or not
+     {
+         for(int x=0;x<a.length;x++)
+            {
+              if(a[x]<0 && a[x]>a.length-1)//first check whether the array is an array of all possibilities or not 
+                 { 
+                  checkArray=0;// the array is not an array of all possibities
+                  break;
+                 }
+            } 
+         if(checkArray==1)
+            {
+                for(int k=0;k<a.length;k++)
+                    {
+                    for(int i=0;i<a.length;i++)
+                        {
+                        if(a[i]==k)
+                           {
+                           count++;
+                           break;
+                           }    
+                        }             
+                    }  
+               if(count==a.length)
+                  {
+                  flag=1;
+                  }   
+            }
+     }
+        System.out.println(flag);
+        return flag;
+    }   

@@ -1,0 +1,19 @@
+public static void main(String[] args) {
+        // TODO code application logic here
+        largeAdjacentSum(new int []{2, 3, 3, 3, 3});
+        largeAdjacentSum(new int []{12, 12, 9} );
+    }
+    static int largeAdjacentSum(int a[])
+    {
+        int sum=0,maxSum=0;
+        for(int i=0;i<a.length-1;i++)
+        {
+            sum=a[i]+a[i+1];
+            
+            if(sum>maxSum)
+                maxSum=sum;
+            
+        }
+        System.out.println(maxSum);
+        return sum;
+    }

@@ -1,0 +1,27 @@
+public static void main(String[] args) {
+        // TODO code application logic here
+        isLegalNumber(new int []{3, 2, 1},  4);
+        isLegalNumber(new int []{3, 7, 1},  6);
+       
+    }
+    static int isLegalNumber(int []a,int n)
+    {
+        int checkElements=0,flag=0;
+        for(int i=0;i<a.length;i++)
+        {
+            if(n>a[i])
+            {
+                //System.out.println("It is legal");
+                checkElements++;
+            }
+            else
+                System.out.println("Not Legal");
+        }
+        if(checkElements==a.length)
+        {
+        System.out.println("It is legal"); 
+        flag=1;
+        }
+        System.out.println(flag);
+        return flag;
+    }

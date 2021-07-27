@@ -1,0 +1,47 @@
+public static void main(String[] args) {
+        
+        isTwinPrime(5);
+        isTwinPrime(7);
+        isTwinPrime(53);
+        isTwinPrime(9);
+    }
+    static int isPrime(int n)
+    {
+        int flag=0,counter=0;
+        for(int x=2;x<n/2;x++)
+        {
+            if(n%x==0)
+            {
+            counter++; 
+            }
+         
+        }
+        if(counter==0)
+        {
+            
+            flag=1;
+        }
+        return flag;
+    }
+  static int isTwinPrime(int n)
+    {
+        int flag=0;
+        int isPrimeReturnVal=isPrime(n);
+        if(isPrimeReturnVal==1)
+        {
+            int isTwinPrimeReturnValAdd=isPrime(n+2);
+            int isTwinPrimeReturnValDif=isPrime(n-2);
+            if(isTwinPrimeReturnValAdd==1||isTwinPrimeReturnValDif==1)
+            {
+             
+                flag=1;
+            }
+            
+        }
+        else if(isPrimeReturnVal==0)
+        {
+           
+        }
+        
+        return flag;
+    }

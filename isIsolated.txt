@@ -1,0 +1,53 @@
+ public static void main(String[] args) {
+        isIsolated(163);
+        isIsolated(162);
+        isIsolated(2097152);
+        isIsolated(-2);
+    }
+   static int isIsolated(long n)
+   {
+       int flag=1,countSqrtDigits=-1,countCubeDigits=-1,sqrtDigit=0,cubeDigit=0;
+       long sqrt,cube=0;
+       int [] sqrtElementsArray;
+              sqrtElementsArray = new int[10];
+       int [] cubeElementsArray;
+              cubeElementsArray = new int[10];        
+       sqrt=n*n;
+       cube=n*n*n;
+       int i=0,x=0; 
+       if(n>=1 && n<=2097151 )
+       {
+            do
+            {
+              sqrtDigit=(int)sqrt%10;
+              countSqrtDigits++;
+              sqrt=sqrt/10;
+              sqrtElementsArray[i]=sqrtDigit;
+              i++;
+            }while(sqrt>0);
+            do
+            {
+              cubeDigit=(int)cube%10;
+              countCubeDigits++;
+              cube=cube/10;
+              cubeElementsArray[x]=cubeDigit;
+              x++;
+            }while(cube>0);
+            for(int j=0;j<countSqrtDigits;j++)
+              {
+               for(int l=0;l<countCubeDigits;l++)
+               {
+                   if(sqrtElementsArray[j]==cubeElementsArray[l])
+                   {
+                       flag=0;
+                       break;
+                   }
+               }
+              }
+        }
+       else
+	{
+           flag=-1;
+	}
+      return flag;
+   }

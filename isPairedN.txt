@@ -1,0 +1,32 @@
+public static void main(String[] args) {
+        isPairedN(new int[]{1, 4, 1, 4, 5, 6},5);
+        isPairedN(new int[]{1, 4, 1, 4, 5, 6},6);
+        isPairedN(new int[]{0, 1, 2, 3, 4, 5, 6, 7, 8},6);
+        isPairedN(new int[]{1, 4, 1},5);
+        isPairedN(new int[]{8, 8, 8, 8, 7, 7, 7},15);
+        isPairedN(new int[]{8, -8, 8, 8, 7, 7, -7},-15);
+        isPairedN(new int[]{3},3);
+        isPairedN(new int[]{},0);
+    
+        
+    }
+    static int isPairedN(int a[], int n)
+    {
+        int flag=0,sum=0,indexSum=0;
+        for(int i=0;i<a.length;i++)
+        {
+            for(int j=i+1;j<a.length;j++)
+            {
+            sum=a[i]+a[j];
+            if(sum==n)
+            {
+                if(i+j==n)
+                        {
+                            flag=1;
+                        }
+            }
+            }
+        }
+        System.out.println(flag);
+        return flag;
+    }

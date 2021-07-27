@@ -1,0 +1,45 @@
+public static void main(String[] args) {
+        // TODO code application logic here
+          isLayered(new int[]{1, 1, 2, 2, 2, 3, 3});
+          isLayered(new int[]{3, 3, 3, 3, 3, 3, 3});
+          isLayered(new int[]{1, 2, 2, 2, 3, 3});
+          isLayered(new int[]{2, 2, 2, 3, 3, 1, 1});
+          isLayered(new int[]{2});
+          isLayered(new int[]{});
+    }
+    static int isLayered(int a[])
+    {
+        int flag=0,count=0,countElementOccurence=0;
+        if(a.length>=2) //chekcing whether the minimum length of layer array(i.e. 2) is satisfied or not
+        {
+        for(int i=0;i<a.length-1;i++)
+        {
+            if(a[i]<=a[i+1])//checking the array is in ascending order
+            {
+                count++;
+            }
+        }
+        for(int i=0;i<a.length;i++)
+        {
+           int k=a[i];
+           for(int j=i+1;j<a.length;j++)
+           {
+               if(k!=a[j])
+               {
+                   countElementOccurence++; 
+                   
+               }
+           }
+           if(countElementOccurence==a.length-1)//the element occurs just only one time in the array,
+               {                                //becasue it differs with n-1 elements
+                  break;  //if one element doesn't satisfy the layered array requirement,
+               }          //no more checking is needed, since it consumes resource
+        }
+        if(count==a.length-1 & countElementOccurence!=a.length-1 )//Ascending Order & element occurs for >1 time
+        {
+           flag=1;
+        } 
+        }
+        System.out.println(flag);
+        return flag;
+    }

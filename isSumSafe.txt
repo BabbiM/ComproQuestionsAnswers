@@ -1,0 +1,28 @@
+public static void main(String[] args) {
+        
+        isSumSafe (new int[]{5, -5, 0}); 
+        isSumSafe (new int[]{5, 1, 0}); 
+    }
+    static int isSumSafe(int []a)
+    {
+        int flag=0,sum=0,count=0;
+        for(int i=0;i<a.length;i++)
+        {
+            sum=sum+a[i];
+        }
+        for(int j=0;j<a.length;j++)
+         {
+            if(sum!=a[j])
+            {
+                count++;
+                
+            }
+         }
+        if(count==a.length)
+        {
+            flag=1;
+            
+        }
+        System.out.println(flag);
+        return flag;
+    }

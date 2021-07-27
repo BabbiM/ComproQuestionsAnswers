@@ -1,0 +1,36 @@
+public static void main(String[] args) {
+        
+        isConsectiveFactored(24);
+        isConsectiveFactored(105);
+        isConsectiveFactored(90);
+        isConsectiveFactored(203);
+        isConsectiveFactored(15);
+        isConsectiveFactored(2);
+        isConsectiveFactored(0);
+        isConsectiveFactored(-12);
+        
+    }
+   static int isConsectiveFactored(int n)
+   {
+       int flag=0,i=0,j=0;
+       if(n>0) //checking whether n is positive.
+       {
+           for(int k=2;k<=n/2;k++) //generating factors
+           {
+              if(n%k==0)//k is a a factor of n
+              {
+                 
+                  j=k;
+                  if(j==i+1)
+                     {
+                      flag=1;
+                      break;
+                     }
+              }
+              i=j;
+              j=0;
+           }
+       }
+      
+       return flag;
+   }

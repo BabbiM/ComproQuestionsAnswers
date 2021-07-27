@@ -1,0 +1,15 @@
+ public static void main(String[] args) {
+        // TODO code application logic here
+        generateFact(5);
+    }
+    static int generateFact(int n)
+    {
+        int fact=n;
+        for(int i=1;i<=n;i++)
+        {
+           fact=fact*(n-1);
+           n--;
+        }
+         System.out.println(fact);
+         return fact;
+    }

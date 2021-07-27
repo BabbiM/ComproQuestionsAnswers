@@ -1,0 +1,36 @@
+public static void main(String[] args) {
+        
+    isSquare(4);
+    isSquare(25);
+    isSquare(-4);
+    isSquare(8);
+    isSquare(0);
+    isSquare(1);
+    }
+    static int isSquare(int n)
+    {
+        int flag=0,sqrt=0;
+        if(n==0 || n==1)
+        {
+            flag=1;
+        }
+        else if(n>1)
+        {
+            for(int i=2;i<=n/2;i++)
+            {
+               sqrt=i*i;
+               if(sqrt==n)
+               {
+                 
+                   flag=1;
+                   break;
+               }
+            }
+        }
+        else
+        {
+            flag=0;
+        }
+        System.out.println(flag);        
+        return flag;
+    }

@@ -1,0 +1,41 @@
+public static void main(String[] args) {
+        sameNumberOfFactors(-6,21);
+        sameNumberOfFactors(6,21);
+        sameNumberOfFactors(8,12);
+        sameNumberOfFactors(23,97);
+        sameNumberOfFactors(0,1);
+        sameNumberOfFactors(0,0);
+        
+    }
+    static int sameNumberOfFactors(int n, int m)
+    {
+        int flag=0,countnFactors=0,countmFactors=0;
+        if(n>0 && m>0)
+        {
+            for(int i=1;i<n;i++)
+             {
+               if(n%i==0)
+               {
+                countnFactors++;
+               }
+             }
+            for(int j=1;j<m;j++)
+               {
+              if(m%j==0)
+                   {
+                countmFactors++;
+                   }
+               }
+         if(countnFactors==countmFactors)
+             {
+            flag=1;
+             }
+        } 
+        else if(n==0 && m==0)
+        {
+            flag=1;
+        }
+        else if(n<0 || m<0)
+            flag=-1;
+        return flag;
+    }

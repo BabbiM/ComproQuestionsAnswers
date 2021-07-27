@@ -1,0 +1,42 @@
+public static void main(String[] args) {
+        // TODO code application logic here
+        isMartian (new int []{1, 3});
+        isMartian (new int []{1, 2, 1, 2, 1, 2, 1, 2, 1});
+        isMartian (new int []{1, 3, 2});
+        isMartian (new int []{1, 3, 2, 2, 1, 5, 1, 5});
+        isMartian (new int []{1, 2, -18, -18, 1, 2});
+        isMartian (new int []{});
+        isMartian (new int []{1});
+        isMartian (new int []{2});
+    }
+    static int isMartian (int a[])
+    {
+        int flag=0,count1=0,count2=0,checkAdjacent=1;
+        for(int i=0;i<a.length;i++)
+        {
+            if(a[i]==1)
+            {
+                count1++;
+            }
+            else if(a[i]==2)
+            {
+                count2++;
+            }
+        }
+       if(a.length>=1)
+       {
+        for(int i=0;i<a.length-1;i++)
+        {
+            if(a[i]==a[i+1])
+            {
+                checkAdjacent=0;
+            }
+        }
+       }
+        if (count1 > count2 & checkAdjacent==1 )
+           {
+             flag=1;
+           }
+        System.out.println(flag);
+        return flag;
+    }

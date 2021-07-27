@@ -1,0 +1,31 @@
+public static void main(String[] args) {
+        isNPrimeable (new int[]{5, 15, 27},2);
+        isNPrimeable (new int[]{5, 15, 27},3);
+        isNPrimeable (new int[]{5, 15, 26},2);
+        isNPrimeable (new int[]{1,1,1,1,1,1,1},4);
+        isNPrimeable (new int[]{},2);
+         
+    }
+    static int isNPrimeable(int[ ] a, int n)
+    {
+        int flag=0,count=0;
+       for(int i=0;i<a.length;i++)
+       {
+          int k=a[i]+n;
+          for(int j=2;j<k/2;j++)//It will not be efficient if we continue checking  more than 
+                                //k/2 since there exists no factor greater than k/2 for k, except k itself.
+                {
+                  if(k%j==0)
+                  {
+                      count++;
+                      break;
+                  }
+                } 
+       }
+       if(count<1)
+        {
+            flag=1;
+        }
+       System.out.println(flag);
+       return flag;
+    }

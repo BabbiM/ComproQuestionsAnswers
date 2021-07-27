@@ -1,0 +1,21 @@
+public static void main(String[] args) {
+        // TODO code application logic here
+        stantonMeasure(new int []{1, 4, 3, 2, 1, 2, 3, 2});
+    }
+    static int stantonMeasure(int []stantonMeasure)
+    {
+        int oneCounter=0,stanMeasure=0;
+        for(int i=0;i<stantonMeasure.length;i++)
+        {
+            if(stantonMeasure[i]==1)
+             oneCounter++;   
+        }
+        for(int j=0;j<stantonMeasure.length;j++)
+        {
+            if(stantonMeasure[j]==oneCounter)
+                stanMeasure++;
+        }
+        System.out.println(stanMeasure);
+        return stanMeasure;
+    }
+}

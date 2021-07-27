@@ -1,0 +1,36 @@
+public static void main(String[] args) {
+        isVanilla(new int []{1});
+        isVanilla(new int []{11, 22, 13, 34, 125});
+        isVanilla(new int []{9, 999, 99999, -9999});
+        isVanilla(new int []{});
+    }
+    static int isVanilla(int a[])
+    {
+        int digit=0,flag=1,n=0,x=0,countDigits=0;
+        int listOfDigits[]=new int[20];
+       for(int i=0;i<a.length;i++)
+        {
+            n=a[i];
+            do
+            {
+                digit=n%10;//get the right most digit
+                n=n/10;
+                if(digit<0) //if it is negative discard the sign
+                {
+                    digit=-(digit);
+                }
+                listOfDigits[x]=digit;//put the digit in the array
+                countDigits++;
+                x++;
+            }while(n>0);
+        }
+       for(int i=0;i<countDigits-1;i++)//loop up to the total number of digits
+        {
+            if(listOfDigits[i]!=listOfDigits[i+1]) 
+            {
+                flag=0;
+                break;
+            }
+        }
+       return flag;
+    }

@@ -1,0 +1,35 @@
+public static void main(String[] args) {
+          henry(1,3);
+    }
+    static int henry(int i, int j)
+    {
+        int start=0,end=0,count=0;
+        for(int n=2;n<=496;n++)
+        {
+            int sum=0;
+          for(int m=1;m<n;m++)
+            {
+                if(n%m==0)
+                {
+                    sum=sum+m;
+                }
+                
+           
+            }
+            if(sum==n)
+                {
+                           
+                    count++;
+                    if(count==i)
+                        start=sum;
+                    else if(count ==j)
+                        end=sum;
+                    else
+                    {}
+            
+                 }
+            
+     }
+        System.out.println(start+end);
+        return start+end;
+}

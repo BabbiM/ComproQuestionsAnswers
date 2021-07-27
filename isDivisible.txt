@@ -1,0 +1,30 @@
+ public static void main(String[] args) {
+        // TODO code application logic here
+        
+        isDivis(new int []{3, 3, 6, 36},3);
+        isDivis(new int [] {4},2);
+        isDivis(new int []{3, 4, 3, 6, 36},3);
+        isDivis(new int []{6, 12, 24, 36},12);
+        isDivis(new int []{},1);
+    }
+    static int isDivis(int a[], int n)
+    {
+        int countDivisables=0;
+        for(int i=0;i<a.length;i++)
+        {
+            if(a[i]%n==0)
+            {
+              countDivisables=countDivisables+1;
+            }
+            
+        }
+        if(countDivisables==a.length)
+        {
+        System.out.println("It is divisible");    
+        }
+        else
+        {
+                System.out.println("No It is not divisible");
+        }
+        return countDivisables;
+    }

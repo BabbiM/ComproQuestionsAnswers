@@ -1,0 +1,44 @@
+public static void main(String[] args) {
+        // TODO code application logic here
+       // convertToBase10(new int []{3, 7, 1},   4);
+     // matches(new int []{1,2,3,-5,-5,2,3,18},3,-2,3});
+       
+    }
+    static  int matches(int[ ] a, int []p)
+    {
+        int flag=0,pVal=0,countPosVal=0,countNegVal=0,check=0;
+       
+        for(int i=0;i<p.length;i++)
+        {
+            pVal=p[i]; //put the first element of p on variable
+            for(int j=0;j<a.length;j++) 
+            {
+                if(pVal>0) //if it is positive
+                {
+                    while(a[j]<0)
+                    {
+                        countPosVal++; //count the number of positive unttil  the loop gets negative
+                                       // if all elements are positive it is controlled by the above loop. i.e a.length
+                    }
+                }
+                else
+                {
+                    while(a[j]>0)
+                    {
+                        countNegVal++;
+                    }
+                }
+            }
+            if(pVal==countPosVal || pVal==countNegVal) //The first element of the p array matches
+            {
+                check++;
+               
+            }
+            
+        }
+        if(check==p.length)//all the elements of the p array matches
+        {
+            flag=1;
+        }
+        return flag;
+    } 

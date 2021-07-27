@@ -1,0 +1,37 @@
+public static void main(String[] args) {
+        computeDepth(42);
+    }
+    static int computeDepth(int n)
+    {
+        int value=0,digit=0,k=0,j=0,count=0,check=0;
+        int digitCont[]=new int[10];//for holding the whole contributed digits.
+        for(int i=1;i<=9;i++)
+        {
+            value=n*i; 
+            do
+            {
+                digit=value%10; //get the digit
+                value=value/10; //eliminate one digit from the left
+                for(int c=0;c<count;c++)
+                {
+                if(digitCont[c]==digit) //check the contributing digit is already existed on the array or not
+                {
+                    check=1; //digit contributed by previous multiples
+                    break;
+                }
+                else
+                    check=0;
+                }
+                 if(digitCont[j]!=digit && check==0) //contributing digit is new
+                    {
+                       digitCont[k]=digit; //register on the array
+                       System.out.println(digitCont[k]); 
+                       count++;
+                       System.out.println(count + ":Count");
+                       k++;
+                       j++;
+                    }
+            }while(value>0);
+         }
+       return count;
+    }

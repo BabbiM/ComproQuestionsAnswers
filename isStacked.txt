@@ -1,0 +1,26 @@
+public static void main(String[] args) {
+        // TODO code application logic here
+        isStacked(10);
+        isStacked(11);
+    }
+    static int isStacked(int n)
+    {
+        int sum=0,flag=0;
+        for(int i=1;i<=n;i++)
+        {
+            sum=sum+i;
+          //  System.out.println(sum);
+            if(sum>=n)
+            {
+                break;
+            }
+        }
+        if(sum==n)
+        {
+            System.out.println("TRUE");
+            flag=1;
+        }
+        else
+            System.out.println("FALSE"); 
+        return flag;
+    }
